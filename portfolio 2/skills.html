@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="scripts.js" defer></script>
+    <title>Digital Arts</title>
+</head>
+
+<body>
+    <header>
+        <a href="index.html" class="logo">EMO-ROOM</a>
+        <i class="fa-solid fa-bars menu-icon"></i>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="services.html">Artworks</a>
+            <a href="skills.html" class="active">Digital Arts</a>
+            <a href="contact.html">Game Design</a>
+        </nav>
+    </header>
+
+    <div class="menu-backdrop"></div>
+
+    <section class="gallery">
+        <h2>Digital Arts</h2>
+        <p>Welcome to the Digital Arts section!</p>
+        <div class="image-gallery">
+            <div class="design-item">
+                <img src="DA8.jpg" alt="Design 1" class="art-image">
+                <p>UnderWorld</p>
+            </div>
+            <div class="design-item">
+                <img src="DA9.jpg" alt="Design 2" class="art-image">
+                <p>The Fall Off</p>
+            </div>
+            <div class="design-item">
+                <img src="DA3.heic" alt="Design 3" class="art-image">
+                <p>S2</p>
+            </div>
+            <div class="design-item">
+                <img src="DA4.jpg" alt="Design 4" class="art-image">
+                <p>Flash-Back</p>
+            </div>
+            <div class="design-item">
+                <img src="DA5.jpg" alt="Design 5" class="art-image">
+                <p>Power</p>
+            </div>
+            <div class="design-item">
+                <img src="DA6.jpg" alt="Design 6" class="art-image">
+                <p>When I'm Lost</p>
+            </div>
+            <div class="design-item">
+                <img src="DA7.jpg" alt="Design 7" class="art-image">
+                <p>Zoombie</p>
+            </div>
+            <div class="design-item">
+                <img src="DA1.jpg" alt="Design 8" class="art-image">
+                <p>IIII</p>
+            </div>
+            <div class="design-item">
+                <img src="DA2.jpg" alt="Design 9" class="art-image">
+                <p>Zenu</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Image Modal -->
+    <div class="modal" id="imageModal">
+        <span class="close" id="closeModal">&times;</span>
+        <img class="modal-content" id="expandedImage">
+    </div>
+
+    <script>
+        // Menu Toggle
+        const menuIcon = document.querySelector('.menu-icon');
+        const nav = document.querySelector('nav');
+        const menuBackdrop = document.querySelector('.menu-backdrop');
+
+        menuIcon.addEventListener('click', () => {
+            nav.classList.toggle('active');
+            menuBackdrop.classList.toggle('active');
+        });
+
+        menuBackdrop.addEventListener('click', () => {
+            nav.classList.remove('active');
+            menuBackdrop.classList.remove('active');
+        });
+
+        // Image Modal
+        const modal = document.getElementById('imageModal');
+        const modalImg = document.getElementById('expandedImage');
+        const closeModal = document.getElementById('closeModal');
+
+        document.querySelectorAll('.art-image').forEach(img => {
+            img.addEventListener('click', (e) => {
+                modal.style.display = 'flex';
+                modalImg.src = e.target.src;
+            });
+        });
+
+        closeModal.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>

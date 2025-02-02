@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="scripts.js"></script>
+    <title>Game Design</title>
+</head>
+
+<body>
+    <header>
+        <a href="index.html" class="logo">EMO-ROOM</a>
+        <i class="fa-solid fa-bars menu-icon"></i>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="services.html">Artworks</a>
+            <a href="skills.html">Digital Arts</a>
+            <a href="contact.html" class="active">Game Design</a>
+        </nav>
+    </header>
+
+    <div class="menu-backdrop"></div>
+
+    <section class="gallery">
+        <h2>Game Design</h2>
+        <p>Sorry , the showtime has not arrived yet .</p>
+
+        <div class="image-gallery">
+         
+        </div>
+    </section>
+
+    <!-- Modal -->
+    <div id="modal" class="modal">
+        <span class="close">&times;</span>
+        <img id="modal-img" class="modal-content" alt="Enlarged view">
+    </div>
+
+    <script>
+        // Menu Toggle
+        const menuIcon = document.querySelector('.menu-icon');
+        const nav = document.querySelector('nav');
+        const menuBackdrop = document.querySelector('.menu-backdrop');
+
+        menuIcon.addEventListener('click', () => {
+            nav.classList.toggle('active');
+            menuBackdrop.classList.toggle('active');
+        });
+
+        menuBackdrop.addEventListener('click', () => {
+            nav.classList.remove('active');
+            menuBackdrop.classList.remove('active');
+        });
+
+        // Modal functionality
+        function openModal(img) {
+            document.getElementById('modal').style.display = "flex";
+            document.getElementById('modal-img').src = img.src;
+        }
+
+        document.querySelector('.close').addEventListener('click', () => {
+            document.getElementById('modal').style.display = "none";
+        });
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            if (event.target == document.getElementById('modal')) {
+                document.getElementById('modal').style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>

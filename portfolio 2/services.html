@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="scripts.js" defer></script>
+    <title>Artworks</title>
+</head>
+
+<body>
+    <header>
+        <a href="index.html" class="logo">EMO-ROOM</a>
+        <i class="fa-solid fa-bars menu-icon"></i>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="emo/services.html" class="active">Artworks</a>
+            <a href="skills.html">Digital Arts</a>
+            <a href="contact.html">Game Design</a>
+        </nav>
+    </header>
+
+    <section class="gallery">
+        <h2>Artworks</h2>
+        <p>Welcome to the Artworks section! </p>
+
+        <div class="image-gallery">
+            <div class="art-item">
+                <img src="dr5.jpeg" alt="Art 1" class="art-image">
+                <p>Limits</p>
+            </div>
+            <div class="art-item">
+                <img src="dr1.jpg" alt="Art 2" class="art-image">
+                <p>Darck-Side</p>
+            </div>
+            <div class="art-item">
+                <img src="dr4.jpg" alt="Art 3" class="art-image">
+                <p>?</p>
+            </div>
+            <div class="art-item">
+                <img src="dr55.jpg" alt="Art 4" class="art-image">
+                <p>Black-rose</p>
+            </div>
+            <div class="art-item">
+                <img src="dr2.jpg" alt="Art 5" class="art-image">
+                <p>Flash-Back</p>
+            </div>
+        </div>
+    </section>
+   <!-- Image Modal -->
+   <div class="modal" id="imageModal">
+    <span class="close" id="closeModal">&times;</span>
+    <img class="modal-content" id="expandedImage" alt="Enlarged view">
+  </div>
+
+    <div class="menu-backdrop"></div>
+
+    <script>
+        // Menu Toggle
+        const menuIcon = document.querySelector('.menu-icon');
+        const nav = document.querySelector('nav');
+        const menuBackdrop = document.querySelector('.menu-backdrop');
+
+        menuIcon.addEventListener('click', () => {
+            nav.classList.toggle('active');
+            menuBackdrop.classList.toggle('active');
+        });
+
+        menuBackdrop.addEventListener('click', () => {
+            nav.classList.remove('active');
+            menuBackdrop.classList.remove('active');
+        });
+
+        // Image Modal
+        const modal = document.getElementById('imageModal');
+        const modalImg = document.getElementById('expandedImage');
+        const closeModal = document.getElementById('closeModal');
+
+        document.querySelectorAll('.art-image').forEach(img => {
+            img.addEventListener('click', (e) => {
+                modal.style.display = 'flex';
+                modalImg.src = e.target.src;
+            });
+        });
+
+        closeModal.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+
+
+    </script>
+    
+</body>
+</html>

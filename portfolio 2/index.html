@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="scripts.js"></script>
+    <title>Portfolio Website</title>
+</head>
+
+<body>
+    <header>
+        <a href="index.html" class="logo">EMO-ROOM</a>
+        <i class="fa-solid fa-bars menu-icon"></i>
+        <nav>
+            <a href="index.html" class="active">Home</a>
+            <a href="services.html">Artworks</a>
+            <a href="skills.html">Digital Arts</a>
+            <a href="contact.html">Game Design</a>
+        </nav>
+    </header>
+
+    <div class="menu-backdrop"></div>
+
+    <section class="home">
+        <div class="home-img">
+            <img src="4.jpg" alt="Profile Picture">
+        </div>
+        
+        <div class="home-content">
+                <h1>Hi, It's <span>Emo</span></h1>
+                <h3 class="typing-text">I'm a <span></span></h3>
+                <p>I'm on a mission to bring visions to life through my drawings, breaking the limits of imagination and forcing reality to see what I see. Every stroke is a rebellion, every line a battle—raw emotions spilling onto the canvas. My art isn’t just seen; it’s felt, it screams, it demands to exist. 🎨✨</p>
+            
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/in/abdeladim-meskini-b2b599349/" target="_blank" rel="noopener noreferrer">
+                    <i class="fa-brands fa-linkedin"></i>
+                </a>
+                <a href="https://x.com/" target="_blank" rel="noopener noreferrer">
+                    <i class="fa-brands fa-x-twitter"></i>
+                </a>
+                <a href="https://www.instagram.com/emo_._sensi" target="_blank" rel="noopener noreferrer">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+            </div>
+            
+               <!--<a href="services.html" class="btn" onclick="navigateToArtworks(event)">Start</a>--> 
+           
+        </div>
+
+
+    </section>
+
+    <script>
+        // Menu Toggle
+        const menuIcon = document.querySelector('.menu-icon');
+        const nav = document.querySelector('nav');
+        const menuBackdrop = document.querySelector('.menu-backdrop');
+
+        menuIcon.addEventListener('click', () => {
+            nav.classList.toggle('active');
+            menuBackdrop.classList.toggle('active');
+        });
+
+        menuBackdrop.addEventListener('click', () => {
+            nav.classList.remove('active');
+            menuBackdrop.classList.remove('active');
+        });
+
+      
+    </script>
+</body>
+</html>
